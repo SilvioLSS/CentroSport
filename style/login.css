@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Special+Gothic+Condensed+One&display=swap');
+
+body{
+    background-color: black;
+    color: #f0eae3;
+}
+
+.titulo, .subtitulo {
+    font-family: "Special Gothic Condensed One", sans-serif;
+}
+
+.desc {
+    font-family: "Merriweather", serif;
+    font-size: medium;
+}
+
+.link{
+    text-decoration: none;
+    color: #fb8903;
+}
+
+.btn{
+    color: #fb8903;
+    background-color: #482d1b;
+}

@@ -1,0 +1,99 @@
+.conteudo-principal {
+  max-width: 400px;
+  width: 90%;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.botao-voltar {
+  font-size: 2.5em;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+.titulo-central {
+  font-family: "Special Gothic Condensed One", sans-serif;
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  flex-grow: 1;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+.logo {
+  margin: 10px 0 20px 0;
+  width: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1;
+}
+
+.titulo {
+  font-family: "Special Gothic Condensed One", sans-serif;
+  font-size: 1.4em;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 30px;
+  line-height: 1.4;
+}
+
+.botoes-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  flex-grow: 1;
+}
+
+.botao-modalidade {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100px;
+  background-color: #482d1b;
+  border: 1px solid #fb8903;
+  border-radius: 15px;
+  text-decoration: none;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.botao-modalidade span {
+  font-family: "Special Gothic Condensed One", sans-serif;
+  font-size: 2.2em;
+  font-weight: bold;
+  color: #fb8903;
+  letter-spacing: 1px;
+}
+
+.botao-modalidade:hover {
+  background-color: #fb8903;
+  transform: scale(1.02);
+}
+
+.botao-modalidade:hover span {
+  color: #482d1b;
+}
