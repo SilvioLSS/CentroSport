@@ -5,27 +5,32 @@ body {
   color: #f0eae3;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
 }
 
 .opcao {
-  width: 90%;
-  height: auto;
-  border: solid 1px #482d1b;
-  transition: 0.2s;
-  padding: 15px;
-  border-radius: 20px;
-  box-shadow: 3px 3px 3px 1px #6533109a;
+    border: solid 1px #482d1b;
+    transition: all 0.3s ease;
+    padding: 15px;
+    border-radius: 20px;
+    box-shadow: 3px 3px 3px 1px #6533109a;
 }
 
 .opcao:hover {
-  width: 93%;
-  border: solid 3px #fb8903;
-  box-shadow: 3px 3px 3px 1px #fb8903;
+    transform: translateY(-3px);
+    border: solid 1px #fb8903;
+    box-shadow: 0 5px 15px rgba(251, 137, 3, 0.4);
+}
+
+main {
+    width: 100%;
+    padding: 20px 0;
 }
 
 .card-img {
-  width: 50%;
+  width: 70%;
   max-height: 200px;
   object-fit: cover;
 }
@@ -38,4 +43,26 @@ body {
 .desc {
   font-family: "Merriweather", serif;
   font-size: medium;
+}
+
+a{
+  text-decoration: none;
+  color: white;
+}
+
+header {
+    overflow: hidden; /* Garante que a imagem não ultrapasse os limites */
+}
+
+header img {
+    width: 100%;
+    display: block; /* Remove espaços abaixo da imagem */
+}
+
+/* Opcional: ajuste de altura para desktop */
+@media (min-width: 768px) {
+    header img.d-md-block {
+        max-height: 300px; /* Ajuste conforme necessário */
+        object-fit: cover; /* Mantém a proporção cobrindo toda a área */
+    }
 }
