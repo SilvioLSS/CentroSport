@@ -7,6 +7,8 @@
     <title>CentroSport - Quadras</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous" />
+    <link rel="stylesheet" href="../style/style.css" />
+    <link rel="stylesheet" href="../style/layout.css" />
     <link rel="stylesheet" href="../style/quadras.css" />
 </head>
 
@@ -17,9 +19,12 @@
     </div>
 
     <div class="text-center">
-        <header class="d-flex justify-content-center align-items-center">
-            <img src="../img/logo branca.png" class="col-md-2 col-3">
+         <a href="home.html" class="botao-voltar">⬅</a>
+         <header class="d-flex justify-content-center align-items-center">
+            <img src="../img/logo branca.png" class="col-2 col-md-2 col-3">
         </header>
+
+
 
         <main>
             <div class="d-flex justify-content-center w-100 my-3" id="loc-container">
@@ -34,38 +39,58 @@
 
             <div class="quadras mt-3 d-flex justify-content-center align-items-center row">
 
-                <!-- Quadra 1 -->
                 <div class="quadra col-10 col-md-4 m-3 araraquara">
                     <h3 class="subtitulo">Morada do Sol</h3>
+                    <button class="btn btn-sm btn-outline-warning ms-2 btnFavorito" data-quadra="Socyete"
+                        title="Favoritar">
+                        ⭐
+                    </button>
                     <p class="desc">Fonte - Araraquara, SP</p>
+                    <p class="tipo">Tipo: Futebol Society</p>
+                    <p class="disponibilidade">Disponibilidade: Disponível</p>
                     <img class="img-fluid" src="../img/quadrasocyete.jpg"
                         alt="Imagem de uma quadra de futebol socyete" />
                     <button class="btn btn-primary mt-2" id="btnAbrirSocyete">RESERVAR QUADRA</button>
                     <span id="confirmacaoSocyete" class="text-success d-block mt-2"></span>
                 </div>
 
-                <!-- Quadra 2 -->
                 <div class="quadra col-10 col-md-4 m-3 saocarlos">
-                    <h3 class="subtitulo">Altos de Pinheiros </h3>
+                    <h3 class="subtitulo">Altos de Pinheiros</h3>
+                    <button class="btn btn-sm btn-outline-warning ms-2 btnFavorito" data-quadra="Basketball"
+                        title="Favoritar">
+                        ⭐
+                    </button>
                     <p class="desc">Centro - São Carlos, SP</p>
+                    <p class="tipo">Tipo: Basquete</p>
+                    <p class="disponibilidade">Disponibilidade: Indisponível</p>
                     <img class="img-fluid" src="../img/quadrabasquete.jpg" alt="Imagem de uma quadra de basquete" />
                     <button class="btn btn-primary mt-2" id="btnAbrirBasquete">RESERVAR QUADRA</button>
                     <span id="confirmacaoBasket" class="text-success d-block mt-2"></span>
                 </div>
 
-                <!-- Quadra 3 -->
                 <div class="quadra col-10 col-md-4 m-3 araraquara">
                     <h3 class="subtitulo">Tennis Play</h3>
+                    <button class="btn btn-sm btn-outline-warning ms-2 btnFavorito" data-quadra="Tenis"
+                        title="Favoritar">
+                        ⭐
+                    </button>
                     <p class="desc">Vila Xavier - Araraquara, SP</p>
+                    <p class="tipo">Tipo: Tênis</p>
+                    <p class="disponibilidade">Disponibilidade: Disponível</p>
                     <img class="img-fluid" src="../img/quadratenis.jpg" alt="Imagem de uma quadra de tênis" />
                     <button class="btn btn-primary mt-2" id="btnAbrirTenis">RESERVAR QUADRA</button>
                     <span id="confirmacaoTennis" class="text-success d-block mt-2"></span>
                 </div>
 
-                <!-- Quadra 4 -->
                 <div class="quadra col-10 col-md-4 m-3 saocarlos">
                     <h3 class="subtitulo">Vôlei Jardim</h3>
+                    <button class="btn btn-sm btn-outline-warning ms-2 btnFavorito" data-quadra="Volei"
+                        title="Favoritar">
+                        ⭐
+                    </button>
                     <p class="desc">Cidade Jardim - São Carlos, SP</p>
+                    <p class="tipo">Tipo: Vôlei</p>
+                    <p class="disponibilidade">Disponibilidade: Disponível</p>
                     <img class="img-fluid" src="../img/quadradevolei.jpg" alt="Imagem de uma quadra de vôlei" />
                     <button class="btn btn-primary mt-2" id="btnAbrirVolei">RESERVAR QUADRA</button>
                     <span id="confirmacaoVolei" class="text-success d-block mt-2"></span>
@@ -75,18 +100,18 @@
         </main>
 
         <footer class="mt-5">
-            <p class="texto">&copy 2025 CentroSport</p>
+            <p class="texto">© 2025 CentroSport</p>
         </footer>
     </div>
 
-    <!-- Modais -->
     <div class="modal fade fundoModal" id="modalSocyete" tabindex="-1" aria-labelledby="modalLabelSocyete"
         aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="modalLabelSocyete">Reserva - Socyete da Fonte</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                    <button type="button" id="btnFechar" class="btn-close btnFechar" data-bs-dismiss="modal"
+                        aria-label="Fechar"></button>
                 </div>
                 <div class="modal-body modalColor infoModal">
                     <p class="">Local: Fonte - Araraquara, SP</p>
@@ -110,7 +135,12 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="modalLabelBasquete">Reserva - Basketball Sanca</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                    <button class="btn btn-sm btn-outline-warning ms-2 btnFavorito" data-quadra="Basketball"
+                        title="Favoritar">
+                        ⭐
+                    </button>
+                    <button type="button" id="btnFechar" class="btn-close btnFechar" data-bs-dismiss="modal"
+                        aria-label="Fechar"></button>
                 </div>
                 <div class="modal-body infoModal">
                     <p>Local: Centro - São Carlos, SP</p>
@@ -134,7 +164,12 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="modalLabelTenis">Reserva - Tennis Play</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                    <button class="btn btn-sm btn-outline-warning ms-2 btnFavorito" data-quadra="Tenis"
+                        title="Favoritar">
+                        ⭐
+                    </button>
+                    <button type="button" id="btnFechar" class="btn-close btnFechar" data-bs-dismiss="modal"
+                        aria-label="Fechar"></button>
                 </div>
                 <div class="modal-body infoModal modalColor">
                     <p>Local: Vila Xavier - Araraquara, SP</p>
@@ -158,7 +193,12 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="modalLabelVolei">Reserva - Vôlei Jardim</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                    <button class="btn btn-sm btn-outline-warning ms-2 btnFavorito" data-quadra="Volei"
+                        title="Favoritar">
+                        ⭐
+                    </button>
+                    <button type="button" id="btnFechar" class="btn-close btnFechar" data-bs-dismiss="modal"
+                        aria-label="Fechar"></button>
                 </div>
                 <div class="modal-body infoModal modalColor">
                     <p>Local: Cidade Jardim - São Carlos, SP</p>
