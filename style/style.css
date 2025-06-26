@@ -1,68 +1,75 @@
-@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Special+Gothic+Condensed+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,700;1,300&family=Special+Gothic+Condensed+One&display=swap");
 
 body {
-  background-color: black;
+  background-image: url('/img/fundo.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   color: #f0eae3;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  flex-direction: column;
-}
-
-.opcao {
-    border: solid 1px #482d1b;
-    transition: all 0.3s ease;
-    padding: 15px;
-    border-radius: 20px;
-    box-shadow: 3px 3px 3px 1px #6533109a;
-}
-
-.opcao:hover {
-    transform: translateY(-3px);
-    border: solid 1px #fb8903;
-    box-shadow: 0 5px 15px rgba(251, 137, 3, 0.4);
-}
-
-main {
-    width: 100%;
-    padding: 20px 0;
-}
-
-.card-img {
-  width: 70%;
-  max-height: 200px;
-  object-fit: cover;
-}
-
-.titulo,
-.subtitulo {
-  font-family: "Special Gothic Condensed One", sans-serif;
-}
-
-.desc {
   font-family: "Merriweather", serif;
-  font-size: medium;
+  margin: 0;
+  min-height: 100vh;
 }
 
-a{
-  text-decoration: none;
+.titulo-central{
   color: white;
 }
 
-header {
-    overflow: hidden; /* Garante que a imagem não ultrapasse os limites */
+.botao-voltar {
+  color: white;
+  transition: color 0.3s ease;
+  font-weight: 700;
+}
+
+.botao-voltar:hover,
+.botao-voltar:focus {
+  color: #fb8903;
+  outline: none;
+}
+
+.opcao {
+  border: 3px solid #fb8903;
+  transition: all 0.3s ease;
+  padding: 15px;
+  border-radius: 20px;
+  font-family: "Special Gothic Condensed One", sans-serif;
+  cursor: pointer;
+  background-color: black;
+}
+
+.opcao:hover,
+.opcao:focus {
+  transform: translateY(-3px);
+  border-color: #fb8903;
+  box-shadow: 0 5px 15px rgba(251, 137, 3, 0.4);
+  text-decoration: none;
+  outline: none;
+}
+
+.subtitulo {
+  font-family: "Special Gothic Condensed One", sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #f0eae3;
+}
+
+main {
+  width: 100%;
+  padding: 20px 0;
 }
 
 header img {
-    width: 100%;
-    display: block; /* Remove espaços abaixo da imagem */
+  height: auto;
+  display: block;
 }
 
-/* Opcional: ajuste de altura para desktop */
-@media (min-width: 768px) {
-    header img.d-md-block {
-        max-height: 300px; /* Ajuste conforme necessário */
-        object-fit: cover; /* Mantém a proporção cobrindo toda a área */
-    }
+/* Ajuste para telas pequenas */
+@media (max-width: 576px) {
+  .subtitulo {
+    font-size: 1.2rem;
+  }
+
+  .opcao {
+    padding: 12px;
+  }
 }

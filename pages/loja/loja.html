@@ -3,67 +3,268 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Loja - CentroSport</title>
-  <link rel="stylesheet" href="../../style/style.css" />
-  <link rel="stylesheet" href="../../style/layout.css" />
-  <link rel="stylesheet" href="../../style/loja/loja.css" />
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Fonte personalizada -->
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet" />
+
+  <style>
+    /* Fundo e fonte principal */
+    body {
+      background-image: url('/img/fundo.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      color: #f0eae3;
+      font-family: "Merriweather", serif;
+      margin: 0;
+      min-height: 100vh;
+    }
+
+    /* Títulos com fonte personalizada */
+    .titulo-central {
+      font-family: 'Anton', sans-serif;
+      letter-spacing: 1.5px;
+      color: #fb8903;
+    }
+
+    /* Container de pedidos */
+    .pedidos-container {
+      max-width: 1000px;
+      margin: 20px auto 40px;
+      padding: 15px 20px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgb(0 0 0 / 0.1);
+      font-size: 0.9rem;
+      color: #252525;
+    }
+
+    /* Pedidos agrupados por usuário */
+    .pedido-usuario {
+      margin-bottom: 1.5rem;
+    }
+
+    .pedido-usuario h5 {
+      font-family: 'Anton', sans-serif;
+      color: #fb8903;
+      border-bottom: 3px solid #fb8903;
+      padding-bottom: 5px;
+      margin-bottom: 0.8rem;
+    }
+
+    /* Cards de produto */
+    .produto-card {
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      height: 360px;
+      /* altura fixa para uniformizar */
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+      background: #fff;
+    }
+
+    .produto-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px 4px rgb(251 137 3 / 0.6);
+    }
+
+    /* Imagem do produto */
+    .produto-card .produto-img {
+      max-height: 180px;
+      object-fit: contain;
+      margin-top: 20px;
+      user-select: none;
+    }
+
+    /* Corpo do card - para alinhar preço e botão no rodapé */
+    .card-body {
+      padding: 1rem 1.25rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* Preço */
+    .preco {
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: #fb8903;
+      margin-bottom: 1rem;
+    }
+
+    /* Botão COMPRAR */
+    .btn.botao-comprar {
+      background-color: #fb8903;
+      color: white;
+      font-weight: 700;
+      font-size: 1.1rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgb(251 137 3 / 0.5);
+      transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+      padding: 0.6rem 0;
+      width: 100%;
+      user-select: none;
+    }
+
+    .btn.botao-comprar:hover,
+    .btn.botao-comprar:focus {
+      background-color: #e77a00;
+      box-shadow: 0 6px 14px rgb(231 122 0 / 0.75);
+      transform: translateY(-2px);
+      color: white;
+      outline: none;
+    }
+
+    /* Modal */
+    .modal-header {
+      background-color: #fb8903;
+      color: white;
+      font-family: 'Anton', sans-serif;
+      letter-spacing: 1px;
+    }
+
+    .modal-footer .btn-primary {
+      background-color: #fb8903;
+      border-color: #fb8903;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    .modal-footer .btn-primary:hover,
+    .modal-footer .btn-primary:focus {
+      background-color: #e77a00;
+      border-color: #e77a00;
+      box-shadow: 0 0 10px rgb(231 122 0 / 0.8);
+      outline: none;
+    }
+
+    /* Inputs e textarea */
+    .form-control {
+      border-radius: 6px;
+      border: 1.5px solid #ccc;
+      transition: border-color 0.3s ease;
+    }
+
+    .form-control:focus {
+      border-color: #fb8903;
+      box-shadow: 0 0 6px rgb(251 137 3 / 0.5);
+      outline: none;
+    }
+
+    /* Responsividade melhorada */
+    @media (max-width: 576px) {
+      .produto-card {
+        height: auto;
+      }
+    }
+  </style>
 </head>
 
 <body>
-  <div class="conteudo-principal">
-    <header class="header">
-      <a href="../home.html" class="botao-voltar">⬅</a>
-      <h1 class="titulo-central">CentroSport</h1>
-    </header>
+  <header class="d-flex align-items-center justify-content-between p-3 bg-dark text-white">
+    <a href="../home.html" class="botao-voltar text-white text-decoration-none fs-1" aria-label="Voltar">⬅</a>
+    <h1 class="titulo-central m-0 text-center flex-grow-1">LOJA CENTROSPORT</h1>
+    <div style="width: 48px;"></div>
+  </header>
 
-    <div class="logo">
-      <img src="../../img/logo.png" alt="logo" class="logo" />
+  <!-- Pedidos feitos aparecerão aqui -->
+  <div id="pedidosFeitos" class="pedidos-container"></div>
+
+  <div class="container my-4 text-center">
+    <img src="../../img/logo.png" alt="logo CentroSport" class="img-fluid logo mb-4" style="max-height: 100px;" />
+
+    <h2 class="titulo-central mb-3">LOJA</h2>
+    <h3 class="mb-4">OPÇÕES DE PRODUTOS DISPONÍVEIS</h3>
+
+    <div class="row justify-content-center g-4" id="listaProdutos">
+      <!-- Os cards produtos -->
+      <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+        <div class="card produto-card h-100 text-center" data-nome="Whey" data-preco="100"
+          data-img="../../img/loja/whey.png">
+          <img src="../../img/loja/whey.png" alt="Whey" class="card-img-top produto-img" />
+          <div class="card-body d-flex flex-column justify-content-between">
+            <p class="preco mb-3">R$ 100,00</p>
+            <button class="btn botao-comprar mt-auto" type="button">COMPRAR</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+        <div class="card produto-card h-100 text-center" data-nome="Bola de Basquete" data-preco="70"
+          data-img="../../img/loja/bola.png">
+          <img src="../../img/loja/bola.png" alt="Bola de Basquete" class="card-img-top produto-img" />
+          <div class="card-body d-flex flex-column justify-content-between">
+            <p class="preco mb-3">R$ 70,00</p>
+            <button class="btn botao-comprar mt-auto" type="button">COMPRAR</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+        <div class="card produto-card h-100 text-center" data-nome="Creatina" data-preco="55"
+          data-img="../../img/loja/creatina.jpg">
+          <img src="../../img/loja/creatina.jpg" alt="Creatina" class="card-img-top produto-img" />
+          <div class="card-body d-flex flex-column justify-content-between">
+            <p class="preco mb-3">R$ 55,00</p>
+            <button class="btn botao-comprar mt-auto" type="button">COMPRAR</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Você pode adicionar mais produtos aqui seguindo o mesmo padrão -->
     </div>
-
-    <h2 class="titulo-central">LOJA</h2>
-
-    <div class="banner-produtos">
-      <span>OPÇÕES DE PRODUTOS DISPONÍVEIS</span>
-    </div>
-
-    <div class="container-produtos">
-      <div class="item-produto">
-        <img src="../../img/loja/whey.png" alt="Whey" />
-        <p class="preco">100 reais</p>
-        <a class="botao-comprar" href="carrinho.html">COMPRAR</a>
-      </div>
-      <div class="item-produto">
-        <img src="../../img/loja/bola.png" alt="Bola de Basquete" />
-        <p class="preco">70 reais</p>
-        <a class="botao-comprar" href="carrinho.html">COMPRAR</a>
-      </div>
-      <div class="item-produto">
-        <img src="../../img/loja/creatina.jpg" alt="Creatina" />
-        <p class="preco">55 reais</p>
-        <a class="botao-comprar" href="carrinho.html">COMPRAR</a>
-      </div>
-      <div class="item-produto">
-        <img src="../../img/loja/creatina.jpg" alt="Creatina" />
-        <p class="preco">155 reais</p>
-        <a class="botao-comprar" href="carrinho.html">COMPRAR</a>
-      </div>
-      <div class="item-produto">
-        <img src="../../img/loja/creatina.jpg" alt="Creatina" />
-        <p class="preco">155 reais</p>
-        <a class="botao-comprar" href="carrinho.html">COMPRAR</a>
-      </div>
-      <div class="item-produto">
-        <img src="../../img/loja/creatina.jpg" alt="Creatina" />
-        <p class="preco">155 reais</p>
-        <a class="botao-comprar" href="carrinho.html">COMPRAR</a>
-      </div>
-    </div>
-
-    <footer class="mt-5">
-      <p class="texto">© 2025 CentroSport</p>
-    </footer>
   </div>
+
+  <footer class="bg-dark text-center text-white py-3 mt-5">
+    <p class="mb-0">© 2025 CentroSport</p>
+  </footer>
+
+  <!-- Modal Bootstrap para pedido -->
+  <div class="modal fade" id="modalPedido" tabindex="-1" aria-labelledby="modalPedidoLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <form class="modal-content" id="formPedido">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalPedidoLabel">Finalizar Pedido</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
+        </div>
+        <div class="modal-body text-start">
+          <div class="text-center mb-3">
+            <img id="modalImg" src="" alt="Produto" class="img-fluid" style="max-height: 120px; object-fit: contain;" />
+          </div>
+          <h5 id="modalNome" class="text-center mb-2"></h5>
+          <p class="text-center mb-3 preco fs-4"></p>
+
+          <div class="mb-3">
+            <label for="enderecoEntrega" class="form-label fw-bold">Endereço de Entrega:</label>
+            <textarea class="form-control" id="enderecoEntrega" rows="3" required
+              placeholder="Digite o endereço"></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="quantidadeProduto" class="form-label fw-bold">Quantidade:</label>
+            <input type="number" class="form-control" id="quantidadeProduto" value="1" min="1" required />
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary w-100">Finalizar Pedido</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Bootstrap Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Link para JavaScript externo -->
+  <script src="../../js/loja.js"></script>
+
 </body>
 
 </html>

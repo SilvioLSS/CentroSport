@@ -1,76 +1,145 @@
-.banner-produtos {
-  background-color: #fb8903;
-  border-radius: 15px;
-  padding: 10px 20px;
-  width: 100%;
-  box-sizing: border-box;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 30px;
-  text-align: center;
+/* Fonte personalizada para títulos e botões */
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+body {
+  background-image: url('/img/fundo.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #f0eae3;
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
 }
 
-.banner-produtos span {
-  font-family: "Special Gothic Condensed One", sans-serif;
-  font-size: 1.2em;
-  color: #482d1b;
-  line-height: 1.3;
+.header, footer {
+  font-family: 'Anton', sans-serif;
+}
+
+/* Botão voltar */
+.botao-voltar {
+  font-size: 2.5rem;
   font-weight: bold;
-  text-transform: uppercase;
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
-.container-produtos {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  gap: 20px;
-  width: 100%;
-  flex-grow: 1;
+.botao-voltar:hover,
+.botao-voltar:focus {
+  color: #fb8903;
+  outline: none;
 }
 
-.item-produto {
+/* Título central */
+.titulo-central {
+  font-family: 'Anton', sans-serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+  color: #f0eae3;
+  margin-bottom: 0.5rem;
+}
+
+/* Subtítulo */
+h3 {
+  font-size: 1.5rem;
+  color: #f0eae3;
+  font-weight: 600;
+}
+
+/* Cards dos produtos */
+.produto-card {
+  background: linear-gradient(to left, #f7ba2b 0%, #ea5358 100%);
+  border-radius: 1rem;
+  box-shadow: 0 8px 15px rgba(234, 83, 88, 0.3);
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
-  margin-bottom: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
 }
 
-.item-produto img {
-  max-width: 100%;
-  height: 120px;
+.produto-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 25px rgba(234, 83, 88, 0.6);
+}
+
+.produto-img {
   object-fit: contain;
-  margin-bottom: 10px;
+  height: 140px;
+  width: 100%;
+  background-color: #fff;
+  padding: 10px;
 }
 
-.item-produto .preco {
-  font-family: "Special Gothic Condensed One", sans-serif;
-  font-size: 1.3em;
+.card-body {
+  background-color: #181818;
+  color: #f0eae3;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+  border-radius: 0 0 1rem 1rem;
+}
+
+.preco {
+  font-family: 'Anton', sans-serif;
+  font-size: 1.3rem;
   font-weight: bold;
   color: #fff;
-  margin-bottom: 8px;
+  margin-bottom: 1rem;
 }
 
+/* Botão comprar */
 .botao-comprar {
   background-color: #c0c0c0;
   border: none;
   border-radius: 10px;
-  padding: 6px 15px;
-  font-family: "Special Gothic Condensed One", sans-serif;
-  font-size: 1.1em;
+  padding: 8px 15px;
+  font-family: 'Anton', sans-serif;
+  font-size: 1.1rem;
   font-weight: bold;
   color: #333;
   cursor: pointer;
   text-decoration: underline;
   text-underline-offset: 2px;
-  transition: background-color 0.2s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  display: inline-block;
+  text-align: center;
 }
 
-.botao-comprar:hover {
+.botao-comprar:hover,
+.botao-comprar:focus {
   background-color: #fb8903;
+  color: #482d1b;
+  outline: none;
 }
 
-.botao-comprar:hover span {
-  color: #482d1b;
+/* Logo */
+.logo {
+  max-width: 150px;
+  height: auto;
+  margin: 0 auto 2rem;
+  display: block;
+}
+
+/* Responsividade para títulos em telas pequenas */
+@media (max-width: 576px) {
+  .titulo-central {
+    font-size: 1.8rem;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+  }
+
+  .botao-voltar {
+    font-size: 2rem;
+  }
+
+  .produto-img {
+    height: 100px;
+  }
 }

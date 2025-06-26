@@ -1,7 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Special+Gothic+Condensed+One&display=swap');
 
 body{
-    background-color: black;
+    background-image: url('/img/fundo.jpg');
+    background-size: cover; /* ou 'contain' */
+    background-repeat: no-repeat;
+    background-position: center;
     color: #f0eae3;
 }
 
